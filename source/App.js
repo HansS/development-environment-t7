@@ -20,7 +20,7 @@ class Counter extends Component {
   render () {
     return (
       <h1 className={this.props.color}>
-        Hrr Derr ({this.props.increment}): {this.state.counter}
+        Hello ({this.props.increment}): {this.state.counter}
       </h1>
     )
   }
