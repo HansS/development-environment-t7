@@ -6,7 +6,6 @@
     "build": "rimraf build/* && cross-env BABEL_ENV=prod webpack",
     "start": "cross-env BABEL_ENV=dev webpack-dev-server --hot --inline",
     "test": "cross-env BABEL_ENV=test nyc ava",
-    "report": "nyc report --reporter=html",
     "lint": "standard source -verbose | snazzy"
   },
   "devDependencies": {
