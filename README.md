@@ -8,10 +8,11 @@ A "ready to run" WebPack-based development environment featuring...
 - [x] React
 - [x] PostCSS
 - [x] Sass
+- [x] Git Hooks
 - [x] Ava Test Runner
 - [x] NYC Code Coverage
 - [x] JS Linting
-- [ ] CSS Linting
+- [x] SASS Linting
 - [ ] ???
 
 
