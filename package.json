@@ -10,7 +10,7 @@
     "lint:js": "standard source -verbose | snazzy",
     "lint:sass": "sass-lint",
     "prepush": "npm test",
-    "postmerge": "echo postmerge"
+    "postmerge": "npm install"
   },
   "devDependencies": {
     "autoprefixer": "6.3.1",
