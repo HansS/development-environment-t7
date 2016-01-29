@@ -5,7 +5,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var autoprefixer = require('autoprefixer')
 
 function getStyleLoader () {
-  return process.env.IS_BUILD
+  return (process.env.BABEL_ENV === 'prod')
     ? ExtractTextPlugin.extract(
       'style-loader',
       'css-loader',
