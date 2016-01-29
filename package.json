@@ -9,7 +9,8 @@
     "test": "cross-env BABEL_ENV=test nyc ava",
     "lint:js": "standard source -verbose | snazzy",
     "lint:sass": "sass-lint",
-    "prepush": "npm test"
+    "prepush": "npm test",
+    "postmerge": "echo postmerge"
   },
   "devDependencies": {
     "autoprefixer": "6.3.1",
