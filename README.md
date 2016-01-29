@@ -14,5 +14,3 @@ A "ready to run" WebPack-based development environment featuring...
 - [x] JS Linting
 - [x] SASS Linting
 - [ ] ???
-
-
