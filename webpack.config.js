@@ -5,7 +5,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var autoprefixer = require('autoprefixer')
 
 function getStyleLoader () {
-  return (process.env.BABEL_ENV === 'prod')
+  return (process.env.BABEL_ENV === 'production')
     ? ExtractTextPlugin.extract(
       'style-loader',
       'css-loader',
@@ -17,11 +17,11 @@ function getStyleLoader () {
 
 module.exports = {
   entry: [
-    './source/main'
+    './source'
   ],
   output: {
     path: path.join(__dirname, 'build'),
-    filename: 'main.js'
+    filename: 'index.js'
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -29,12 +29,13 @@ module.exports = {
       template: 'source/index.html',
       inject: 'body'
     }),
-    new ExtractTextPlugin('main.css')
+    new ExtractTextPlugin('index.css')
   ],
   module: {
     loaders: [{
       test: /\.js$/,
       loaders: ['babel'],
+      exclude: /node_modules/,
       include: path.join(__dirname, 'source')
     }, {
       test: /\.scss$/,

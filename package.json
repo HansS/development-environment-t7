@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "rimraf build/* && cross-env BABEL_ENV=prod webpack",
-    "start": "cross-env BABEL_ENV=dev webpack-dev-server --hot --inline",
+    "build": "rimraf build/* && cross-env BABEL_ENV=production webpack",
+    "start": "cross-env BABEL_ENV=development webpack-dev-server --hot --inline --progress",
     "pretest": "npm run lint:js && npm run lint:sass",
     "test": "cross-env BABEL_ENV=test nyc ava",
     "lint:js": "standard source -verbose | snazzy",
@@ -56,7 +56,7 @@
     ],
     "ignore": "test.js",
     "env": {
-      "dev": {
+      "development": {
         "presets": [
           "react-hmre"
         ]
