@@ -1,13 +1,3 @@
-Title:  SVG Article
-Author: Ray Villalobos
-Date:   January 6, 2016
-heroimage: "http://i.imgur.com/rBX9z0k.png"
-tags:
-- data visualization
-- bitmap
-- raster graphics
-- navigation
-
 # webpack-react-starter
 
 A "ready to run" WebPack-based development environment featuring...
