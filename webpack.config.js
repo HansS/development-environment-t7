@@ -17,11 +17,11 @@ function getStyleLoader () {
 
 module.exports = {
   entry: [
-    './source'
+    './source/main'
   ],
   output: {
     path: path.join(__dirname, 'build'),
-    filename: 'index.js'
+    filename: 'main.js'
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -29,7 +29,7 @@ module.exports = {
       template: 'source/index.html',
       inject: 'body'
     }),
-    new ExtractTextPlugin('index.css')
+    new ExtractTextPlugin('main.css')
   ],
   module: {
     loaders: [{
