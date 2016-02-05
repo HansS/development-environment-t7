@@ -4,7 +4,7 @@ A "ready to run" WebPack-based development environment featuring...
 
 - [x] Hot Reloading for JS & CSS
 - [x] Babel
-- [ ] Redux
+- [x] Redux
 - [x] React
 - [x] PostCSS
 - [x] Sass
