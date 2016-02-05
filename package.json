@@ -6,9 +6,9 @@
     "build": "rimraf build/* && cross-env BABEL_ENV=production webpack",
     "start": "cross-env BABEL_ENV=development webpack-dev-server --hot --inline --progress",
     "pretest": "npm run lint",
-    "test": "ava ./source/containers/*/test.js",
+    "test": "ava ./source/containers/*/test.js nyc ava",
     "lint": "npm run lint:js && npm run lint:sass",
-    "lint:js": "standard source -verbose | snazzy",
+    "lint:js": "standard source/**/*.js -verbose | snazzy",
     "lint:sass": "sass-lint",
     "prepush": "npm test",
     "postmerge": "npm install"
