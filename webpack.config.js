@@ -1,8 +1,8 @@
-var path = require('path')
+var path = require('path');
 
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var autoprefixer = require('autoprefixer')
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var autoprefixer = require('autoprefixer');
 
 function getStyleLoader () {
   return (process.env.BABEL_ENV === 'production')
@@ -45,4 +45,4 @@ module.exports = {
   postcss: function () {
     return [autoprefixer]
   }
-}
+};
