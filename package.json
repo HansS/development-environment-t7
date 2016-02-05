@@ -7,7 +7,7 @@
     "start": "cross-env BABEL_ENV=development webpack-dev-server --hot --inline --progress",
     "pretest": "npm run lint",
     "test": "ava ./source/containers/*/test.js",
-    "lint": "npm run lint:js && npm run lint:css",
+    "lint": "npm run lint:js && npm run lint:sass",
     "lint:js": "standard source -verbose | snazzy",
     "lint:sass": "sass-lint",
     "prepush": "npm test",
