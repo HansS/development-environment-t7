@@ -1,0 +1,24 @@
+.book-list {
+  float: left;
+  width: 30%; }
+  .book-list ul {
+    margin: 0 0 60px 0;
+    padding: 0; }
+    .book-list ul li {
+      color: #ffffff;
+      list-style: none;
+      margin: 20px;
+      border: 1px solid powderblue;
+      padding: 20px; }
+      .book-list ul li:hover {
+        cursor: pointer; }
+
+.book-details {
+  float: left;
+  width: 70%;
+  text-align: center; }
+
+body {
+  background: orange; }
+
+/*# sourceMappingURL=index.css.map */
