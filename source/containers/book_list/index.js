@@ -1,31 +1,48 @@
+// Dependencies.
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { selectBook } from '../../actions/index'
 import { bindActionCreators } from 'redux'
 
-class BookList extends Component {
+// Actions.
+import selectBook from '../../actions/select_book'
 
+class BookList extends Component {
   renderList () {
-    return this.props.books.map(book => {
+    const selectBook = this.props.selectBook.bind(this)
+
+    return this.props.books.map(function (book, i) {
+      const title = book.title
+
       return (
-        <li className='list-group-item'
-            key={book.title}
-            onClick={() => this.props.selectBook(book)}>
-              {book.title}
+        <li
+          key={i}
+          onClick={function () {
+            selectBook(book)
+          }}
+        >
+          {title}
         </li>
       )
     })
   }
 
   render () {
-    return(
+    const list = this.renderList()
+
+    return (
       <div className='book-list'>
-        <ul className='list-group col-sm-4'>
-          {this.renderList()}
+        <ul>
+          {list}
         </ul>
       </div>
     )
   }
+}
+
+// Validation.
+BookList.propTypes = {
+  books: React.PropTypes.array,
+  selectBook: React.PropTypes.func
 }
 
 function mapStateToProps (state) {
@@ -35,7 +52,11 @@ function mapStateToProps (state) {
 }
 
 function mapDispatchToProps (dispatch) {
-  return bindActionCreators({ selectBook }, dispatch)
+  const o = {
+    selectBook: selectBook
+  }
+
+  return bindActionCreators(o, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookList)

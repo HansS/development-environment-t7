@@ -1,8 +1,7 @@
-var path = require('path');
-
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var autoprefixer = require('autoprefixer');
+var path = require('path')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var autoprefixer = require('autoprefixer')
 
 function getStyleLoader () {
   return (process.env.BABEL_ENV === 'production')
@@ -17,19 +16,20 @@ function getStyleLoader () {
 
 module.exports = {
   entry: [
-    './source/main'
+    './source/source'
   ],
   output: {
     path: path.join(__dirname, 'build'),
-    filename: 'main.js'
+    filename: 'bundle.js'
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Custom template',
+      title: 'T7 Starter Template',
       template: 'source/index.html',
       inject: 'body'
     }),
-    new ExtractTextPlugin('main.css')
+
+    new ExtractTextPlugin('bundle.css')
   ],
   module: {
     loaders: [{
@@ -43,6 +43,8 @@ module.exports = {
     }]
   },
   postcss: function () {
-    return [autoprefixer]
+    return [
+      autoprefixer
+    ]
   }
-};
+}

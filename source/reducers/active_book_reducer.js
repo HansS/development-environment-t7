@@ -3,5 +3,6 @@ export default function (state = null, action = null) {
     case 'BOOK_SELECTED':
       return action.payload
   }
+
   return state
 }

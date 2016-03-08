@@ -1,0 +1,7 @@
+// Base styles.
+@import 'partials/reset.scss';
+@import 'partials/global.scss';
+
+// Component styles.
+@import '../containers/book_list/index.scss';
+@import '../containers/book_details/index.scss';
