@@ -10,11 +10,8 @@ import reducers from './reducers'
 // CSS.
 import './style/source.scss'
 
-// Components.
-import App from './components/app'
-
-// DOM element.
-const el = document.getElementById('app')
+// Routes.
+import routes from './routes'
 
 // Redux store.
 const store = createStore(reducers)
@@ -22,8 +19,12 @@ const store = createStore(reducers)
 // Redux provider.
 const template = (
 <Provider store={store}>
-<App />
+{routes}
 </Provider>
 )
 
+// DOM element.
+const el = document.getElementById('app')
+
+// Render the app.
 ReactDOM.render(template, el)

@@ -24,7 +24,6 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'T7 Starter Template',
       template: 'source/index.html',
       inject: 'body'
     }),
