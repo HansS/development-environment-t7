@@ -1,7 +1,24 @@
 {
-  "name": "development-environment",
-  "version": "1.0.0",
-  "description": "",
+  "babel": {
+    "presets": [
+      "react",
+      "es2015"
+    ],
+    "plugins": [
+      "transform-runtime"
+    ],
+    "ignore": "test.js",
+    "env": {
+      "development": {
+        "presets": [
+          "react-hmre"
+        ]
+      },
+      "test": {
+        "sourceMaps": "inline"
+      }
+    }
+  },
   "jest": {
     "unmockedModulePathPatterns": [
       "<rootDir>/node_modules/lodash",
@@ -53,7 +70,6 @@
     "moment": "^2.12.0",
     "node-sass": "3.4.2",
     "npm": "3.6.0",
-    "nyc": "5.5.0",
     "postcss": "5.0.14",
     "postcss-loader": "0.8.0",
     "react": "0.14.7",
@@ -71,25 +87,5 @@
     "webpack": "1.12.12",
     "webpack-dev-server": "1.14.1",
     "whatwg-fetch": "^0.11.0"
-  },
-  "babel": {
-    "presets": [
-      "react",
-      "es2015"
-    ],
-    "plugins": [
-      "transform-runtime"
-    ],
-    "ignore": "test.js",
-    "env": {
-      "development": {
-        "presets": [
-          "react-hmre"
-        ]
-      },
-      "test": {
-        "sourceMaps": "inline"
-      }
-    }
   }
 }
