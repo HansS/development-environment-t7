@@ -1,14 +1,19 @@
+# Format.
 options:
   formatter: stylish
+
+# Globbing.
 files:
   include: 'source/**/*.s+(a|c)ss'
+
+# Rules.
 rules:
-  # Extends
+  # Extends.
   extends-before-mixins: 1
   extends-before-declarations: 1
   placeholder-in-extend: 1
 
-  # Mixins
+  # Mixins.
   mixins-before-declarations: 1
 
   # Line Spacing
@@ -16,7 +21,7 @@ rules:
   empty-line-between-blocks: 1
   single-line-per-selector: 1
 
-  # Disallows
+  # Disallows.
   no-color-keywords: 1
   no-color-literals: 1
   no-css-comments: 1
@@ -37,12 +42,12 @@ rules:
   no-warn: 1
   property-units: 0
 
-  # Nesting
+  # Nesting.
   force-attribute-nesting: 1
   force-element-nesting: 1
   force-pseudo-nesting: 1
 
-  # Name Formats
+  # Name Formats.
   class-name-format: 1
   function-name-format: 1
   id-name-format: 0
@@ -50,7 +55,7 @@ rules:
   placeholder-name-format: 1
   variable-name-format: 1
 
-  # Style Guide
+  # Style Guide.
   bem-depth: 0
   border-zero: 1
   brace-style: 1
@@ -68,7 +73,7 @@ rules:
   variable-for-property: 1
   zero-unit: 1
 
-  # Inner Spacing
+  # Inner Spacing.
   space-after-comma: 1
   space-before-colon: 1
   space-after-colon: 1
@@ -78,6 +83,6 @@ rules:
   space-between-parens: 1
   space-around-operator: 1
 
-  # Final Items
+  # Final Items.
   trailing-semicolon: 1
   final-newline: 1
