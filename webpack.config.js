@@ -1,7 +1,8 @@
-var path = require('path')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var autoprefixer = require('autoprefixer')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+var path = require('path')
+var webpack = require('webpack')
 
 function getStyleLoader () {
   return (process.env.BABEL_ENV === 'production')
@@ -28,7 +29,23 @@ module.exports = {
       inject: 'body'
     }),
 
-    new ExtractTextPlugin('bundle.css')
+    new ExtractTextPlugin('bundle.css', {
+      allChunks: true
+    }),
+
+    /*
+      This adds the `window.fetch` Ajax helper.
+
+      Documentation here:
+
+      https://github.com/github/fetch
+    */
+    new webpack.ProvidePlugin({
+      'Promise': 'imports?this=>global!exports?global.Promise!es6-promise',
+      'window.Promise': 'imports?this=>global!exports?global.Promise!es6-promise',
+      'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch',
+      'window.fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
+    })
   ],
   module: {
     loaders: [{

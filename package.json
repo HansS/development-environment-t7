@@ -2,13 +2,28 @@
   "name": "development-environment",
   "version": "1.0.0",
   "description": "",
+  "jest": {
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/lodash",
+      "<rootDir>/node_modules/react",
+      "<rootDir>/node_modules/react-addons-test-utils",
+      "<rootDir>/node_modules/react-dom"
+    ],
+    "scriptPreprocessor": "<rootDir>/node_modules/jest-css-modules",
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "testFileExtensions": [
+      "js"
+    ]
+  },
   "scripts": {
     "build": "rimraf build/* && cross-env BABEL_ENV=production webpack",
     "build_static": "ncp source/static build/static",
     "prestart": "npm run build_static",
     "start": "cross-env BABEL_ENV=development webpack-dev-server --hot --inline --progress",
     "pretest": "npm run lint",
-    "test": "cross-env BABEL_ENV=test nyc ava",
+    "test": "jest --coverage",
     "lint": "npm run lint:js && npm run lint:sass",
     "lint:js": "standard source/**/*.js -verbose | snazzy",
     "lint:sass": "sass-lint",
@@ -16,8 +31,8 @@
     "postmerge": "npm install"
   },
   "devDependencies": {
+    "accounting": "^0.4.1",
     "autoprefixer": "6.3.1",
-    "ava": "0.11.0",
     "babel-core": "6.4.5",
     "babel-loader": "6.2.1",
     "babel-plugin-transform-runtime": "6.4.3",
@@ -30,12 +45,23 @@
     "extract-text-webpack-plugin": "1.0.1",
     "html-webpack-plugin": "2.7.2",
     "husky": "0.10.2",
+    "jest-cli": "^0.9.1",
+    "jest-css-modules": "^1.0.0",
+    "json-loader": "^0.5.4",
+    "lodash": "^4.6.1",
+    "marked": "^0.3.5",
+    "moment": "^2.12.0",
     "node-sass": "3.4.2",
     "npm": "3.6.0",
     "nyc": "5.5.0",
     "postcss": "5.0.14",
     "postcss-loader": "0.8.0",
+    "react": "0.14.7",
+    "react-addons-test-utils": "^0.14.7",
+    "react-dom": "0.14.7",
+    "react-redux": "^4.3.0",
     "react-router": "^2.0.0",
+    "redux": "^3.2.1",
     "rimraf": "2.5.1",
     "sass-lint": "1.5.0",
     "sass-loader": "3.1.2",
@@ -43,15 +69,8 @@
     "standard": "5.4.1",
     "style-loader": "0.13.0",
     "webpack": "1.12.12",
-    "webpack-dev-server": "1.14.1"
-  },
-  "ava": {
-    "files": [
-      "./source/**/test.js"
-    ],
-    "require": [
-      "babel-core/register"
-    ]
+    "webpack-dev-server": "1.14.1",
+    "whatwg-fetch": "^0.11.0"
   },
   "babel": {
     "presets": [
@@ -72,22 +91,5 @@
         "sourceMaps": "inline"
       }
     }
-  },
-  "dependencies": {
-    "react": "0.14.7",
-    "react-dom": "0.14.7",
-    "react-redux": "^4.3.0",
-    "redux": "^3.2.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/t7/development-environment.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/t7/development-environment/issues"
-  },
-  "homepage": "https://github.com/t7/development-environment#readme"
+  }
 }
