@@ -35,9 +35,7 @@
   },
   "scripts": {
     "build": "rimraf build/* && cross-env BABEL_ENV=production webpack",
-    "build_static": "node ./build_static",
-    "prestart": "npm run build_static",
-    "start": "cross-env BABEL_ENV=development webpack-dev-server --hot --inline --progress",
+    "start": "cross-env BABEL_ENV=development webpack-dev-server --hot --inline --progress --content-base source",
     "pretest": "npm run lint",
     "test": "jest --coverage",
     "lint": "npm run lint:js && npm run lint:sass",
@@ -56,6 +54,7 @@
     "babel-preset-react": "6.3.13",
     "babel-preset-react-hmre": "1.0.1",
     "babel-runtime": "^6.3.19",
+    "copy-webpack-plugin": "^1.1.1",
     "cross-env": "1.0.7",
     "css-loader": "0.23.1",
     "extract-text-webpack-plugin": "1.0.1",

@@ -1,4 +1,5 @@
 var autoprefixer = require('autoprefixer')
+var CopyWebpackPlugin = require('copy-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var path = require('path')
@@ -24,6 +25,18 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [
+    // Copy over "static" folder.
+    new CopyWebpackPlugin([
+      {
+        // Input: "source/static".
+        from: './source/static',
+
+        // Output: "build/static".
+        to: './static'
+      }
+    ]),
+
+    // Generate "index.html" file.
     new HtmlWebpackPlugin({
       template: './source/index.html',
       inject: 'body',
@@ -39,6 +52,7 @@ module.exports = {
       }
     }),
 
+    // Bundle ".scss" in one ".css" file.
     new ExtractTextPlugin('bundle.css', {
       allChunks: true
     }),
