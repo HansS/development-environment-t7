@@ -1,7 +1,6 @@
 .DS_Store
-.nyc_output
-.idea
 build
 coverage
 node_modules
 npm-debug.log
+stylelint.report.txt
