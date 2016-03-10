@@ -4,15 +4,15 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var path = require('path')
 var webpack = require('webpack')
 
+// Returns *.scss loader.
 function getStyleLoader () {
-  return (process.env.BABEL_ENV === 'production')
-    ? ExtractTextPlugin.extract(
-      'style-loader',
-      'css-loader',
-      'postcss-loader',
-      'sass-loader'
-    )
-    : 'style-loader!css-loader!postcss-loader!sass-loader'
+  var x = 'style!css!postcss!sass'
+
+  if (process.env.BABEL_ENV === 'production') {
+    x = ExtractTextPlugin.extract('style', 'css!postcss!sass')
+  }
+
+  return x
 }
 
 module.exports = {
@@ -26,7 +26,17 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: 'source/index.html',
-      inject: 'body'
+      inject: 'body',
+      minify: {
+        removeComments: true,
+        removeCommentsFromCDATA: true,
+        removeCDATASectionsFromCDATA: true,
+        collapseWhitespace: true,
+        collapseInlineTagWhitespace: true,
+        useShortDoctype: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true
+      }
     }),
 
     new ExtractTextPlugin('bundle.css', {
@@ -53,7 +63,8 @@ module.exports = {
       loaders: ['babel'],
       exclude: /node_modules/,
       include: path.join(__dirname, 'source')
-    }, {
+    },
+    {
       test: /\.scss$/,
       loader: getStyleLoader()
     }]
