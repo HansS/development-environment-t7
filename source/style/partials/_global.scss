@@ -1,16 +1,14 @@
-/*
-Basic HTML
-================================================================================
-*/
+// Basic HTML.
+//============================================================
 
 body {
-  background: #fff;
-  color: #333;
+  background: $body-background;
+  color: $body-color;
 
   font-family: "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
 
-  font-size: 13px;
-  line-height: 1.5;
+  font-size: $body-font-size;
+  line-height: $body-line-height;
 }
 
 hr {
@@ -27,10 +25,8 @@ small {
   font-size: 11px;
 }
 
-/*
-Abbreviations in labels.
-================================================================================
-*/
+// Abbreviations in labels.
+//============================================================
 
 abbr[title] {
   border: 0;
@@ -47,10 +43,8 @@ label abbr[title="Required"] {
   padding-left: 2px;
 }
 
-/*
-Images.
-================================================================================
-*/
+// Images.
+//============================================================
 
 img {
   display: inline-block;
@@ -62,20 +56,16 @@ br + figure {
   margin-top: 5px;
 }
 
-/*
-Code blocks.
-================================================================================
-*/
+// Code blocks.
+//============================================================
 
 pre,
 code {
   font-family: "DejaVu Sans Mono", Menlo, Consolas, monospace;
 }
 
-/*
-Headings
-================================================================================
-*/
+// Headings.
+//============================================================
 
 h1 {
   font-size: 25px;
@@ -104,7 +94,7 @@ h6 {
 h1 small,
 h2 small {
   color: #999;
-  font-size: 13px;
+  font-size: $body-font-size;
   font-weight: normal;
 }
 
@@ -121,10 +111,8 @@ h2 small {
   }
 }
 
-/*
-Spacing
-================================================================================
-*/
+// Spacing.
+//============================================================
 
 ol {
   list-style: decimal;

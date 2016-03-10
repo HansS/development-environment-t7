@@ -5,7 +5,7 @@ class BookDetail extends Component {
   render () {
     if (!this.props.book) {
       return (
-        <div className='book-details'>
+        <div className='t7-book-details'>
           <p>
             Select a book to get started.
           </p>
@@ -14,7 +14,7 @@ class BookDetail extends Component {
     }
 
     return (
-      <div className='book-details'>
+      <div className='t7-book-details'>
         <h3>
           Details for:
         </h3>

@@ -1,0 +1,31 @@
+// Base variables.
+//============================================================
+
+$base-padding: 20px;
+$base-border-color: #000;
+$base-border-width: 1px;
+
+$lang-forward: left;
+$lang-reverse: right;
+
+// Body.
+//============================================================
+
+$body-background: #fff;
+$body-color: #333;
+
+$body-font-family: "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
+$body-font-size: 13px;
+$body-line-height: 1.5;
+
+// Book list.
+//============================================================
+
+$t7-book-list-border-color: $base-border-color;
+$t7-book-list-border-width: $base-border-width;
+$t7-book-list-padding: $base-padding;
+
+// Book details.
+//============================================================
+
+$t7-book-details-padding: $base-padding;

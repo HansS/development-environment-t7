@@ -30,7 +30,7 @@ class BookList extends Component {
     const list = this.renderList()
 
     return (
-      <div className='book-list'>
+      <div className='t7-book-list'>
         <ul>
           {list}
         </ul>

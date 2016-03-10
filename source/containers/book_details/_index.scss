@@ -1,0 +1,18 @@
+// Variables.
+//============================================================
+
+$t7-book-details-padding: 20px !default;
+$t7-book-details-width: 70% !default;
+
+$lang-forward: left !default;
+
+// Component style.
+//============================================================
+
+.t7-book-details {
+  float: $lang-forward;
+  padding-top: $t7-book-details-padding;
+  padding-left: $t7-book-details-padding;
+  padding-right: $t7-book-details-padding;
+  width: $t7-book-details-width;
+}

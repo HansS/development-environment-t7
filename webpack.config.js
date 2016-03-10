@@ -17,7 +17,7 @@ function getStyleLoader () {
 
 module.exports = {
   entry: [
-    './source/source'
+    './source'
   ],
   output: {
     path: path.join(__dirname, 'build'),
@@ -25,7 +25,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'source/index.html',
+      template: './source/index.html',
       inject: 'body',
       minify: {
         removeComments: true,

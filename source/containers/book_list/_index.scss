@@ -1,0 +1,38 @@
+// Variables.
+//============================================================
+
+$t7-book-list-padding: 20px !default;
+$t7-book-list-width: 30% !default;
+
+$t7-book-list-border-color: #000 !default;
+$t7-book-list-border-width: 1px !default;
+
+$lang-forward: left !default;
+
+// Component style.
+//============================================================
+
+.t7-book-list {
+  float: $lang-forward;
+  padding-top: $t7-book-list-padding;
+  padding-left: $t7-book-list-padding;
+  padding-right: $t7-book-list-padding;
+  width: $t7-book-list-width;
+}
+
+.t7-book-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.t7-book-list li {
+  border-color: $t7-book-list-border-color;
+  border-width: $t7-book-list-border-width;
+
+  border-style: solid;
+  cursor: pointer;
+
+  margin-bottom: $t7-book-list-padding;
+  padding: $t7-book-list-padding;
+}

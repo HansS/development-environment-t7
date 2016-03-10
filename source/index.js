@@ -8,7 +8,7 @@ import { createStore } from 'redux'
 import reducers from './reducers'
 
 // CSS.
-import './style/source.scss'
+import './style/index.scss'
 
 // Routes.
 import routes from './routes'
