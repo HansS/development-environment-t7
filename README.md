@@ -1,4 +1,4 @@
-# webpack-react-starter
+## Development environment for T7 projects
 
 A "ready to run" WebPack-based development environment featuring...
 
