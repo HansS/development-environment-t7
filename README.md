@@ -1,4 +1,4 @@
-## Development environment for T7 projects
+## T7 Development Environment Boilerplate
 
 A "ready to run" WebPack-based development environment featuring...
 
